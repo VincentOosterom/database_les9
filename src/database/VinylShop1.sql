@@ -260,64 +260,36 @@ ALTER TABLE ONLY public.album
     ADD CONSTRAINT album_pkey PRIMARY KEY (id);
 
 
---
--- TOC entry 3586 (class 2606 OID 16533)
--- Name: artist artist_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
---
+
 
 ALTER TABLE ONLY public.artist
     ADD CONSTRAINT artist_pkey PRIMARY KEY (id);
 
 
---
--- TOC entry 3588 (class 2606 OID 16538)
--- Name: genre genre_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
---
+
 
 ALTER TABLE ONLY public.genre
     ADD CONSTRAINT genre_pkey PRIMARY KEY (id);
 
 
---
--- TOC entry 3584 (class 2606 OID 16528)
--- Name: publisher publisher_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
---
 
 ALTER TABLE ONLY public.publisher
     ADD CONSTRAINT publisher_pkey PRIMARY KEY (id);
 
 
---
--- TOC entry 3582 (class 2606 OID 16523)
--- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
---
+
 
 ALTER TABLE ONLY public.users
     ADD CONSTRAINT users_pkey PRIMARY KEY (id);
 
 
---
--- TOC entry 3596 (class 2606 OID 16555)
--- Name: album_artist fk_album_artist_album; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
 ALTER TABLE ONLY public.album_artist
     ADD CONSTRAINT fk_album_artist_album FOREIGN KEY (album_id) REFERENCES public.album(id) ON DELETE CASCADE;
 
 
---
--- TOC entry 3597 (class 2606 OID 16560)
--- Name: album_artist fk_album_artist_artist; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
 ALTER TABLE ONLY public.album_artist
     ADD CONSTRAINT fk_album_artist_artist FOREIGN KEY (artist_id) REFERENCES public.artist(id) ON DELETE CASCADE;
 
-
---
--- TOC entry 3598 (class 2606 OID 16570)
--- Name: album_genre fk_album_genre_album; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
 
 ALTER TABLE ONLY public.album_genre
     ADD CONSTRAINT fk_album_genre_album FOREIGN KEY (album_id) REFERENCES public.album(id) ON DELETE CASCADE;
